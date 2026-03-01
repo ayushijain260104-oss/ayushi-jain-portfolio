@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --color-beige: #F5FEFE; /* Very Light Powder Blue */
+  --color-olive: #0F172A; /* Slate 900 for accents */
+  --color-ink: #0F172A;   /* Slate 900 for text */
+  --color-paper: #E0F2F1; /* Light Teal for cards */
+}
+
+@layer base {
+  body {
+    @apply bg-beige text-ink font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-wider text-ink;
+  }
+}
+
+.section-divider {
+  @apply h-px bg-ink/10 w-full my-12;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
