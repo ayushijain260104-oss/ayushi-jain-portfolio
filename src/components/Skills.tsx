@@ -25,7 +25,7 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl font-serif text-ink">Skills & <span className="italic">Proficiencies</span></h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {skillGroups.map((group, index) => (
             <motion.div
               key={group.title}
@@ -33,11 +33,12 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="p-10 bg-white border border-ink/5 rounded-3xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <h3 className="text-xl font-serif mb-6 text-ink/90 border-b border-ink/10 pb-4">{group.title}</h3>
-              <ul className="space-y-3">
+              <h3 className="text-2xl font-serif italic mb-8 text-ink/90 border-b border-ink/10 pb-6">{group.title}</h3>
+              <ul className="space-y-4">
                 {group.skills.map(skill => (
-                  <li key={skill} className="text-ink/70 font-light flex items-center gap-2">
+                  <li key={skill} className="text-sm text-ink/70 font-light flex items-center gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-ink/20"></span>
                     {skill}
                   </li>

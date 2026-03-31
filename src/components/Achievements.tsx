@@ -34,7 +34,7 @@ export default function Achievements() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {achievements.map((item, index) => (
           <motion.div
             key={index}
@@ -42,15 +42,15 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="text-center md:text-left"
+            className="p-8 bg-white border border-ink/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center"
           >
-            <div className="text-5xl md:text-7xl font-display text-ink mb-2 leading-none">
+            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none">
               {item.number}
             </div>
-            <h3 className="text-xs uppercase tracking-widest font-bold text-ink mb-2">
+            <h3 className="text-[10px] uppercase tracking-widest font-bold text-ink mb-3">
               {item.label}
             </h3>
-            <p className="text-[11px] text-ink/70 leading-relaxed max-w-[180px] mx-auto md:mx-0">
+            <p className="text-[11px] text-ink/60 leading-relaxed">
               {item.description}
             </p>
           </motion.div>

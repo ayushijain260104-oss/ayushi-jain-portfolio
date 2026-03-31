@@ -9,7 +9,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Timeline from './components/Timeline';
 import Achievements from './components/Achievements';
-import CaseStudies from './components/CaseStudies';
 import Assignments from './components/Assignments';
 import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
@@ -23,21 +22,19 @@ export default function App() {
       <main className="flex-1 lg:ml-64">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <Hero />
-          <div className="section-divider" />
+          <div className="py-20" />
           <About />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Timeline />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Achievements />
-          <div className="section-divider" />
-          <CaseStudies />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Assignments />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Skills />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Testimonials />
-          <div className="section-divider" />
+          <div className="py-20" />
           <Contact />
           <Footer />
         </div>

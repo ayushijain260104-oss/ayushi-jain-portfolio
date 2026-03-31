@@ -33,9 +33,9 @@ export default function About() {
               { title: "Execution", desc: "Turning complex strategies into simple actions." },
               { title: "Creativity", desc: "Finding unique solutions for standard problems." }
             ].map((item, i) => (
-              <div key={i} className="p-6 bg-paper rounded-xl border border-ink/5">
-                <h4 className="font-serif text-lg mb-2 italic text-ink">{item.title}</h4>
-                <p className="text-xs text-ink/60 leading-relaxed">{item.desc}</p>
+              <div key={i} className="p-8 bg-white rounded-2xl border border-ink/5 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-serif text-xl mb-3 italic text-ink">{item.title}</h4>
+                <p className="text-xs text-ink/60 leading-relaxed font-light">{item.desc}</p>
               </div>
             ))}
           </div>

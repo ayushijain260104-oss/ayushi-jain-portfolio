@@ -37,7 +37,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-paper p-8 rounded-3xl shadow-sm border border-ink/5 relative"
+                className="bg-white p-10 rounded-3xl shadow-sm border border-ink/5 relative hover:shadow-md transition-shadow"
               >
                 <Quote className="absolute top-6 right-8 text-ink/10" size={48} />
                 <p className="text-xl font-serif italic mb-6 leading-relaxed text-ink/90">
@@ -45,7 +45,7 @@ export default function Testimonials() {
                 </p>
                 <div>
                   <p className="font-bold text-ink">{t.author}</p>
-                  <p className="text-sm text-ink/60 uppercase tracking-wider">{t.role}</p>
+                  <p className="text-xs text-ink/40 uppercase tracking-widest mt-1">{t.role}</p>
                 </div>
               </motion.div>
             ))}

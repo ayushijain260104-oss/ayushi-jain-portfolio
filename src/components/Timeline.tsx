@@ -45,10 +45,7 @@ export default function Timeline() {
       </div>
 
       <div className="relative">
-        {/* Central Vertical Line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-ink/10 -translate-x-1/2 hidden md:block" />
-
-        <div className="space-y-12 md:space-y-0">
+        <div className="space-y-8">
           {experience.map((item, index) => (
             <motion.div 
               key={index} 
@@ -56,40 +53,33 @@ export default function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative"
+              className="p-10 bg-white border border-ink/5 rounded-3xl shadow-sm hover:shadow-md transition-all"
             >
-              {/* Numbered Circle */}
-              <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ink text-beige font-display text-xl flex items-center justify-center z-10 hidden md:flex border-4 border-beige">
-                {index + 1}
-              </div>
-
-              <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                {/* Content Side */}
-                <div className="w-full md:w-1/2 p-6 md:p-12">
-                  <div className={`${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                    <h3 className="text-2xl md:text-3xl font-display text-ink mb-1 uppercase tracking-tight">
-                      {item.role}
-                    </h3>
-                    <p className="text-sm font-bold text-ink/90 mb-4">
-                      {item.company} <span className="mx-2 text-ink/20">|</span> <span className="font-normal text-ink/70 italic font-serif">{item.period}</span>
-                    </p>
-                    <ul className={`space-y-3 text-sm text-ink/80 font-light leading-relaxed list-none`}>
-                      {item.points.map((point, i) => (
-                        <li key={i} className={`flex gap-3 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                          <span className="w-1.5 h-1.5 rounded-full bg-ink/40 mt-1.5 shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                <div className="flex-1">
+                  <h3 className="text-3xl font-display text-ink mb-2 uppercase tracking-tight">
+                    {item.role}
+                  </h3>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-sm font-bold text-ink">{item.company}</span>
+                    <span className="text-ink/20">|</span>
+                    <span className="text-sm italic font-serif text-ink/60">{item.period}</span>
+                  </div>
+                  <ul className="space-y-4">
+                    {item.points.map((point, i) => (
+                      <li key={i} className="flex gap-4 text-sm text-ink/70 font-light leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-ink/20 mt-1.5 shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="hidden md:block">
+                  <div className="w-12 h-12 rounded-full bg-ink/5 flex items-center justify-center text-ink font-display text-xl">
+                    0{index + 1}
                   </div>
                 </div>
-
-                {/* Empty Side */}
-                <div className="hidden md:block md:w-1/2" />
               </div>
-
-              {/* Horizontal Separator for Mobile */}
-              <div className="h-px bg-ink/10 w-full md:hidden my-8" />
             </motion.div>
           ))}
         </div>
