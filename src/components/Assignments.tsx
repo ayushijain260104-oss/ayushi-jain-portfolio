@@ -14,20 +14,20 @@ const assignments = [
     image: "https://i.ibb.co/6RWMFMdh/image.png"
   },
   {
-    title: "Brewing Innovation: The Fruity Coffee Revolution",
+    title: "Brewing Innovation: The Kruti Coffee Revolution",
     problem: "Rebranding coffee as a refreshing, fruit-forward lifestyle beverage for Gen-Z.",
     overview: "An integrated 360° campaign leveraging sensory marketing and digital storytelling to disrupt traditional caffeine consumption habits.",
-    link1: "https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy",
+    link1: "https://drive.google.com/file/d/1bhRSyvNEJd2b2BD_zmMzvvxO4jtZcodN/view",
     link2: "https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy",
-    image: "https://i.ibb.co/mVxJqcKx/image.png"
+    image: "https://i.ibb.co/kgYB9r4j/image.png"
   },
   {
     title: "Search Dominance: Technical SEO & Content Synergy",
     problem: "Low organic visibility hindering customer acquisition and brand authority.",
     overview: "A comprehensive SEO framework focusing on technical optimization and high-intent keyword mapping to secure sustainable top-tier rankings.",
-    link1: "https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy",
+    link1: "https://drive.google.com/file/d/1DAK1UQzygmgJOk1rHGxeUIFuaT_y2We_/view",
     link2: "https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy",
-    image: "https://picsum.photos/seed/seo/1200/800"
+    image: "https://i.ibb.co/rfmvGh89/image.png"
   },
   {
     title: "Conversion Catalyst: E-commerce UX Optimization",
