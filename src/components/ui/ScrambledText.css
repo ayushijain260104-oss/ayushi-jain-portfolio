@@ -1,8 +1,0 @@
-.text-block {
-  /* Base styles removed for reusability */
-}
-
-.char {
-  will-change: transform;
-  display: inline-block;
-}

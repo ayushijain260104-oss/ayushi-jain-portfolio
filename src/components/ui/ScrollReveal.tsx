@@ -20,10 +20,10 @@ interface ScrollRevealProps {
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   scrollContainerRef,
-  enableBlur = true,
+  enableBlur = false,
   baseOpacity = 0.1,
   baseRotation = 3,
-  blurStrength = 4,
+  blurStrength = 0,
   containerClassName = '',
   textClassName = '',
   rotationEnd = 'bottom bottom',

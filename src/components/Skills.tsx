@@ -33,7 +33,7 @@ export default function Skills() {
         <ScrollReveal
           baseOpacity={0.2}
           baseRotation={0}
-          blurStrength={5}
+          blurStrength={0}
           containerClassName="!m-0"
           textClassName="text-4xl md:text-5xl font-serif text-ink !font-normal"
         >

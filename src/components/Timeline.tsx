@@ -43,7 +43,7 @@ export default function Timeline() {
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
-          blurStrength={15}
+          blurStrength={0}
           containerClassName="!m-0"
           textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink !font-normal"
         >

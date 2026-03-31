@@ -10,7 +10,7 @@ export default function Contact() {
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
-          blurStrength={12}
+          blurStrength={0}
           containerClassName="!m-0"
           textClassName="text-5xl md:text-7xl font-display mb-12 leading-none text-ink !font-normal"
         >

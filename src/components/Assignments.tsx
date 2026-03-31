@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { FileText, ExternalLink, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
-import ScrollStack, { ScrollStackItem } from './ui/ScrollStack';
+import Folder from './ui/Folder';
 
 const assignments = [
   {
@@ -43,7 +43,7 @@ export default function Assignments() {
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
-          blurStrength={15}
+          blurStrength={0}
           containerClassName="!m-0"
           textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink mb-6 !font-normal"
         >
@@ -54,61 +54,75 @@ export default function Assignments() {
         </p>
       </div>
 
-      <ScrollStack
-        useWindowScroll={true}
-        itemDistance={100}
-        itemScale={0.05}
-        itemStackDistance={20}
-        stackPosition="15%"
-        scaleEndPosition="5%"
-        baseScale={0.9}
-        rotationAmount={1}
-        blurAmount={2}
-      >
-        {assignments.map((item, index) => (
-          <ScrollStackItem key={index}>
-            <div className="group h-full p-8 md:p-12 bg-white rounded-3xl border border-ink/10 shadow-xl flex flex-col md:flex-row gap-10 items-center">
-              <div className="flex-1">
-                <div className="flex justify-between items-start mb-8">
-                  <div className="p-4 bg-ink/5 rounded-2xl text-ink group-hover:bg-ink group-hover:text-white transition-colors">
-                    <FileText size={28} />
-                  </div>
+      <div className="flex justify-center py-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <Folder 
+            color="#5227FF"
+            items={[
+              <div className="w-full">
+                <h4 className="text-xs font-bold uppercase mb-6 text-ink/40 border-b border-ink/5 pb-2">Projects 01 - 02</h4>
+                <div className="space-y-8">
+                  {assignments.slice(0, 2).map((item, idx) => (
+                    <div key={idx} className="group/item">
+                      <h3 className="text-xl font-serif italic text-ink mb-2 group-hover/item:text-indigo-600 transition-colors">{item.title}</h3>
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-ink/30 mb-2">Problem: {item.problem}</p>
+                      <p className="text-xs leading-relaxed text-ink/60 mb-4">{item.overview}</p>
+                      <div className="flex gap-4">
+                        <a href={item.link1} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-tighter text-ink border border-ink/10 py-1.5 px-3 hover:bg-ink hover:text-beige transition-all">Case Study</a>
+                        <a href={item.link2} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-tighter text-ink border border-ink/10 py-1.5 px-3 hover:bg-ink hover:text-beige transition-all">Strategy</a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="text-3xl md:text-4xl font-serif italic text-ink mb-4 group-hover:text-ink/70 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-[11px] uppercase tracking-widest font-bold text-ink/30 mb-6">
-                  Problem: {item.problem}
-                </p>
-                <p className="text-base md:text-lg text-ink/60 leading-relaxed font-light mb-10">
-                  {item.overview}
-                </p>
+              </div>,
+              <div className="w-full">
+                <h4 className="text-xs font-bold uppercase mb-6 text-ink/40 border-b border-ink/5 pb-2">Projects 03 - 04</h4>
+                <div className="space-y-8">
+                  {assignments.slice(2, 4).map((item, idx) => (
+                    <div key={idx} className="group/item">
+                      <h3 className="text-xl font-serif italic text-ink mb-2 group-hover/item:text-indigo-600 transition-colors">{item.title}</h3>
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-ink/30 mb-2">Problem: {item.problem}</p>
+                      <p className="text-xs leading-relaxed text-ink/60 mb-4">{item.overview}</p>
+                      <div className="flex gap-4">
+                        <a href={item.link1} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-tighter text-ink border border-ink/10 py-1.5 px-3 hover:bg-ink hover:text-beige transition-all">Case Study</a>
+                        <a href={item.link2} target="_blank" rel="noopener noreferrer" className="text-[9px] font-bold uppercase tracking-tighter text-ink border border-ink/10 py-1.5 px-3 hover:bg-ink hover:text-beige transition-all">Strategy</a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>,
+              <div className="w-full flex flex-col h-full">
+                <h4 className="text-xs font-bold uppercase mb-6 text-ink/40 border-b border-ink/5 pb-2">Strategic Resources</h4>
+                <div className="flex-1 flex flex-col justify-center items-center text-center space-y-6">
+                  <div className="p-6 bg-ink/5 rounded-full">
+                    <FileText size={40} className="text-ink/20" />
+                  </div>
+                  <p className="text-sm text-ink/60 max-w-xs italic font-light">
+                    "Strategy is about making choices, trade-offs; it's about deliberately choosing to be different."
+                  </p>
+                  <a
+                    href="https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-beige text-[10px] font-bold uppercase tracking-widest hover:bg-ink/80 transition-all"
+                  >
+                    Access Full Archive <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </div>
-              
-              <div className="flex flex-col gap-4 w-full md:w-72 shrink-0">
-                <a 
-                  href={item.link1}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-5 bg-ink text-beige text-[10px] font-bold uppercase tracking-widest hover:bg-ink/80 transition-all"
-                >
-                  View Full Case Study 
-                  <ArrowUpRight size={14} />
-                </a>
-                <a 
-                  href={item.link2}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-5 border border-ink/10 text-ink text-[10px] font-bold uppercase tracking-widest hover:bg-ink/5 transition-all"
-                >
-                  See Detailed Strategy 
-                  <ArrowUpRight size={14} />
-                </a>
-              </div>
-            </div>
-          </ScrollStackItem>
-        ))}
-      </ScrollStack>
+            ]}
+          />
+          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 text-center w-full">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-ink/20">Click to expand the archive</p>
+          </div>
+        </motion.div>
+      </div>
 
       <div className="mt-20 text-center">
         <p className="text-ink/60 text-sm mb-6 font-light italic">Ready to see more? Dive into the complete archive of my strategic work.</p>

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
-import ScrambledText from './ui/ScrambledText';
 
 export default function Hero() {
   return (
@@ -17,18 +16,14 @@ export default function Hero() {
           <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-ink/40 mb-8 block">
             Portfolio 2026 / Digital Marketing
           </span>
-          <ScrambledText
-            as="h1"
-            radius={150}
-            duration={0.8}
-            speed={0.4}
-            scrambleChars="X_#*&@"
-            className="!m-0"
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[18vw] md:text-[14vw] font-display leading-[0.8] tracking-tighter mb-12 text-ink block"
           >
-            <span className="text-[18vw] md:text-[14vw] font-display leading-[0.8] tracking-tighter mb-12 text-ink block">
-              AYUSHI <br /> JAIN
-            </span>
-          </ScrambledText>
+            AYUSHI <br /> JAIN
+          </motion.h1>
           <div className="flex items-center gap-6 mt-12">
             <div className="h-px bg-ink w-16" />
             <p className="text-xl md:text-2xl font-serif italic text-ink/60">
@@ -42,7 +37,7 @@ export default function Hero() {
             <ScrollReveal
               baseOpacity={0}
               baseRotation={0}
-              blurStrength={10}
+              blurStrength={0}
               containerClassName="!m-0"
               textClassName="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight text-ink/90 !font-normal"
             >

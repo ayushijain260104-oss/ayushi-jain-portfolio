@@ -13,7 +13,7 @@ export default function About() {
         <ScrollReveal
           baseOpacity={0.1}
           baseRotation={2}
-          blurStrength={8}
+          blurStrength={0}
           containerClassName="!m-0"
           textClassName="text-2xl font-serif leading-relaxed text-ink/90 !font-normal"
         >
