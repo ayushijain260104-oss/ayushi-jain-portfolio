@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
+import TextTyping from './ui/TextTyping';
 
 export default function Hero() {
   return (
@@ -34,15 +35,14 @@ export default function Hero() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <ScrollReveal
-              baseOpacity={0}
-              baseRotation={0}
-              blurStrength={0}
-              containerClassName="!m-0"
-              textClassName="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight text-ink/90 !font-normal"
-            >
-              I explore the "why" to build the how.
-            </ScrollReveal>
+            <div className="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight text-ink/90 font-normal">
+              <TextTyping 
+                text='I explore the "why" to build the how.' 
+                typingSpeed={80}
+                duration={3000}
+                className="inline-block"
+              />
+            </div>
           </div>
           
           <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 justify-end">
