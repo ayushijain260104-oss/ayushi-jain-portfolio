@@ -1,14 +1,21 @@
 import React from 'react';
 import { Mail, Linkedin } from 'lucide-react';
+import ScrollReveal from './ui/ScrollReveal';
 
 export default function Contact() {
   return (
     <div>
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-ink/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-8 block">Contact</span>
-        <h2 className="text-5xl md:text-7xl font-display mb-12 leading-none text-ink">
-          LET'S BUILD <br /> <span className="italic font-serif text-ink/40 text-4xl md:text-6xl lowercase">something meaningful</span>
-        </h2>
+        <ScrollReveal
+          baseOpacity={0}
+          baseRotation={0}
+          blurStrength={12}
+          containerClassName="!m-0"
+          textClassName="text-5xl md:text-7xl font-display mb-12 leading-none text-ink !font-normal"
+        >
+          LET'S BUILD something meaningful
+        </ScrollReveal>
         <p className="text-xl text-ink/60 font-light mb-16 max-w-xl mx-auto leading-relaxed">
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </p>

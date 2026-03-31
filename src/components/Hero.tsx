@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import ScrollReveal from './ui/ScrollReveal';
+import ScrambledText from './ui/ScrambledText';
 
 export default function Hero() {
   return (
@@ -15,10 +17,19 @@ export default function Hero() {
           <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-ink/40 mb-8 block">
             Portfolio 2026 / Digital Marketing
           </span>
-          <h1 className="text-[18vw] md:text-[14vw] font-display leading-[0.8] tracking-tighter mb-12 text-ink">
-            AYUSHI <br /> JAIN
-          </h1>
-          <div className="flex items-center gap-6">
+          <ScrambledText
+            as="h1"
+            radius={150}
+            duration={0.8}
+            speed={0.4}
+            scrambleChars="X_#*&@"
+            className="!m-0"
+          >
+            <span className="text-[18vw] md:text-[14vw] font-display leading-[0.8] tracking-tighter mb-12 text-ink block">
+              AYUSHI <br /> JAIN
+            </span>
+          </ScrambledText>
+          <div className="flex items-center gap-6 mt-12">
             <div className="h-px bg-ink w-16" />
             <p className="text-xl md:text-2xl font-serif italic text-ink/60">
               Digital Marketer & Brand Strategist
@@ -28,9 +39,15 @@ export default function Hero() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <h2 className="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight text-ink/90">
-              I explore the <span className="italic text-ink">"why"</span> to build the <span className="italic underline decoration-ink/10 underline-offset-[12px]">how</span>.
-            </h2>
+            <ScrollReveal
+              baseOpacity={0}
+              baseRotation={0}
+              blurStrength={10}
+              containerClassName="!m-0"
+              textClassName="text-4xl md:text-6xl font-serif leading-[1.1] tracking-tight text-ink/90 !font-normal"
+            >
+              I explore the "why" to build the how.
+            </ScrollReveal>
           </div>
           
           <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 justify-end">

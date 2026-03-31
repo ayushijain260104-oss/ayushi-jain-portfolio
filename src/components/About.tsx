@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import ScrollReveal from './ui/ScrollReveal';
 
 export default function About() {
   return (
@@ -9,14 +10,15 @@ export default function About() {
         <h2 className="text-4xl font-serif italic text-ink">My Journey</h2>
       </div>
       <div className="lg:col-span-8 space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-2xl font-serif leading-relaxed text-ink/90"
+        <ScrollReveal
+          baseOpacity={0.1}
+          baseRotation={2}
+          blurStrength={8}
+          containerClassName="!m-0"
+          textClassName="text-2xl font-serif leading-relaxed text-ink/90 !font-normal"
         >
-          "Strategy is the bridge between <span className="italic">vision</span> and <span className="italic">reality</span>."
-        </motion.div>
+          "Strategy is the bridge between vision and reality."
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-ink/70 font-light">
           <p>
             My journey began with a curiosity for how digital spaces influence human behavior. Currently pursuing my BBA in Digital Business, I've spent the last two years exploring the intersection of branding and consumer psychology.

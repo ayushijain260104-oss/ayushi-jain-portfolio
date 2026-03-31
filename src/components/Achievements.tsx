@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import ScrollReveal from './ui/ScrollReveal';
 
 const achievements = [
   {
@@ -29,9 +30,15 @@ export default function Achievements() {
     <div>
       <div className="mb-16">
         <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">02 / Key Achievements</span>
-        <h2 className="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink">
-          IMPACT & <span className="italic font-serif text-ink/40 text-4xl md:text-6xl">Results</span>
-        </h2>
+        <ScrollReveal
+          baseOpacity={0}
+          baseRotation={0}
+          blurStrength={15}
+          containerClassName="!m-0"
+          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink !font-normal"
+        >
+          IMPACT & Results
+        </ScrollReveal>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

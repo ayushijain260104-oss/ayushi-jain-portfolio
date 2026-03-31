@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Target, Search, BarChart3, MessageSquare } from 'lucide-react';
+import ScrollReveal from './ui/ScrollReveal';
 
 const services = [
   {
@@ -31,7 +32,15 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <span className="text-white/60 font-medium tracking-widest uppercase text-sm mb-4 block">What I Offer</span>
-          <h2 className="text-4xl md:text-5xl font-serif">Strategic <span className="italic">Solutions</span></h2>
+          <ScrollReveal
+            baseOpacity={0.2}
+            baseRotation={0}
+            blurStrength={5}
+            containerClassName="!m-0"
+            textClassName="text-4xl md:text-5xl font-serif text-white !font-normal"
+          >
+            Strategic Solutions
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
