@@ -1,25 +1,30 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import ScrollReveal from './ui/ScrollReveal';
+import CountUp from './ui/CountUp';
 
 const achievements = [
   {
-    number: "25+",
+    number: "25",
+    suffix: "+",
     label: "Pages Optimized",
     description: "Website pages enhanced for better search performance"
   },
   {
-    number: "20+",
+    number: "20",
+    suffix: "+",
     label: "Quality Backlinks",
     description: "High-authority links built to boost domain rankings"
   },
   {
-    number: "10+",
+    number: "10",
+    suffix: "+",
     label: "SEO Blogs",
     description: "Optimized content pieces driving organic traffic"
   },
   {
     number: "3",
+    suffix: "",
     label: "Platforms Managed",
     description: "LinkedIn, Instagram, and Facebook content strategy"
   }
@@ -51,8 +56,13 @@ export default function Achievements() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="p-8 bg-white border border-ink/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center group"
           >
-            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none group-hover:scale-110 transition-transform">
-              {item.number}
+            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none group-hover:scale-110 transition-transform flex items-baseline">
+              <CountUp
+                to={Number(item.number)}
+                duration={2}
+                className="font-display"
+              />
+              {item.suffix && <span className="text-2xl ml-0.5">{item.suffix}</span>}
             </div>
             <h3 className="text-[10px] uppercase tracking-widest font-bold text-ink mb-3">
               {item.label}
