@@ -35,7 +35,7 @@ const assignments = [
 
 export default function Assignments() {
   return (
-    <section id="assignments" className="py-24">
+    <div>
       <div className="mb-16">
         <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">03 / Strategic Archive</span>
         <h2 className="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink mb-6">
@@ -57,13 +57,13 @@ export default function Assignments() {
             variants={{
               initial: { opacity: 0, y: 20 },
               animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.1 } },
-              hover: { y: -8, transition: { duration: 0.3 } }
+              hover: { y: -12, transition: { duration: 0.4, ease: "easeOut" } }
             }}
-            className="group h-full p-10 bg-white rounded-3xl border border-ink/5 shadow-sm hover:shadow-xl hover:shadow-ink/5 transition-all duration-500 flex flex-col justify-between"
+            className="group h-full p-10 bg-white rounded-3xl border border-ink/5 shadow-sm hover:shadow-2xl hover:shadow-ink/10 transition-all duration-500 flex flex-col justify-between"
           >
             <div>
               <div className="flex justify-between items-start mb-8">
-                <div className="p-4 bg-ink/5 rounded-2xl text-ink">
+                <div className="p-4 bg-ink/5 rounded-2xl text-ink group-hover:bg-ink group-hover:text-white transition-colors">
                   <FileText size={28} />
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function Assignments() {
                 href={item.link1}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-beige text-[10px] font-bold uppercase tracking-widest hover:bg-ink/90 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-ink text-beige text-[10px] font-bold uppercase tracking-widest hover:bg-ink/80 transition-all"
               >
                 View Full Case Study 
                 <ArrowUpRight size={14} />
@@ -113,6 +113,6 @@ export default function Assignments() {
           View Complete Portfolio <ExternalLink size={14} />
         </a>
       </div>
-    </section>
+    </div>
   );
 }

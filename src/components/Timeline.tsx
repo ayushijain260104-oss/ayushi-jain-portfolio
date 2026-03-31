@@ -36,7 +36,7 @@ const experience = [
 
 export default function Timeline() {
   return (
-    <section id="experience" className="py-24">
+    <div>
       <div className="mb-16">
         <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">01 / Experience</span>
         <h2 className="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink">
@@ -53,11 +53,11 @@ export default function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="p-10 bg-white border border-ink/5 rounded-3xl shadow-sm hover:shadow-md transition-all"
+              className="p-10 bg-white border border-ink/5 rounded-3xl shadow-sm hover:shadow-xl transition-all group"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                 <div className="flex-1">
-                  <h3 className="text-3xl font-display text-ink mb-2 uppercase tracking-tight">
+                  <h3 className="text-3xl font-display text-ink mb-2 uppercase tracking-tight group-hover:text-ink/70 transition-colors">
                     {item.role}
                   </h3>
                   <div className="flex items-center gap-3 mb-6">
@@ -75,7 +75,7 @@ export default function Timeline() {
                   </ul>
                 </div>
                 <div className="hidden md:block">
-                  <div className="w-12 h-12 rounded-full bg-ink/5 flex items-center justify-center text-ink font-display text-xl">
+                  <div className="w-12 h-12 rounded-full bg-ink/5 flex items-center justify-center text-ink font-display text-xl group-hover:bg-ink group-hover:text-white transition-all">
                     0{index + 1}
                   </div>
                 </div>
@@ -84,6 +84,6 @@ export default function Timeline() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

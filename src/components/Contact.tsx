@@ -3,7 +3,7 @@ import { Mail, Linkedin } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6">
+    <div>
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-ink/40 font-bold tracking-[0.3em] uppercase text-[10px] mb-8 block">Contact</span>
         <h2 className="text-5xl md:text-7xl font-display mb-12 leading-none text-ink">
@@ -28,6 +28,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

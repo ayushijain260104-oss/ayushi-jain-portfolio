@@ -26,7 +26,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-24">
+    <div>
       <div className="mb-16">
         <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">02 / Key Achievements</span>
         <h2 className="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink">
@@ -42,9 +42,9 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="p-8 bg-white border border-ink/5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center"
+            className="p-8 bg-white border border-ink/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center group"
           >
-            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none">
+            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none group-hover:scale-110 transition-transform">
               {item.number}
             </div>
             <h3 className="text-[10px] uppercase tracking-widest font-bold text-ink mb-3">
@@ -56,6 +56,6 @@ export default function Achievements() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
