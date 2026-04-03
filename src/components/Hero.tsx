@@ -42,7 +42,7 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-6 mt-12">
             <div className="h-px bg-ink w-16" />
-            <p className="text-xl md:text-2xl font-serif italic text-ink/60">
+            <p className="text-xl md:text-2xl font-serif italic text-ink/60 max-w-2xl">
               I’m Ayushi Jain, someone who enjoys understanding consumer behavior, spotting cultural insights, and turning them into ideas that actually connect.
             </p>
           </div>

@@ -19,23 +19,25 @@ export default function About() {
       <div className="lg:col-span-8 space-y-8">
         <div className="h-[200px] border border-ink/5 rounded-3xl overflow-hidden bg-paper/50">
           <PhysicsFallingText
-            text="I look for the “why” behind brands."
+            text="I’ve always been more interested in the “why” behind brands than just the “what.”"
             fontSize="32px"
             gravity={0.15}
           />
         </div>
         <div className="space-y-6">
           <p className="text-xl font-serif italic text-ink/90 leading-relaxed">
-            I’m someone who’s always been more interested in the “why” behind brands than just the “what.” Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?
+            Why do people trust certain brands instantly? Why do some campaigns feel real, while others feel forced?
+          </p>
+          <p className="text-lg text-ink/80 font-serif italic">
+            I notice how people react, what they relate to, and what makes something stick.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-ink/70 font-light">
           <div className="space-y-4">
-            <p>Through my projects and internships, I’ve explored areas like influencer marketing, brand positioning, and integrated campaigns — but what excites me most is connecting insights to ideas.</p>
+            <p>Through my projects, I’ve explored influencer marketing, brand positioning, and campaigns but what I enjoy most is connecting insights to ideas.</p>
           </div>
           <div className="space-y-4">
-            <p>I enjoy breaking down brands, observing consumer behavior, and building ideas that feel both logical and creative.</p>
-            <p>Currently, I’m looking for opportunities where I can learn, contribute, and grow while working on meaningful brand and marketing challenges.</p>
+            <p>I like breaking things down, understanding behavior, and building ideas that feel thoughtful and relevant.</p>
           </div>
         </div>
         
