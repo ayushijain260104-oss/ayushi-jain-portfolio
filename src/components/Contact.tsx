@@ -32,12 +32,12 @@ export default function Contact() {
         
         <div className="space-y-6 mb-20">
           <FallingText
-            text="You made it this far."
+            text="If something here resonated with you, let’s talk."
             className="text-4xl md:text-6xl font-display text-beige leading-none block"
             stagger={0.03}
           />
           <FallingText
-            text="You made it this far."
+            text="Let’s build something meaningful."
             className="text-4xl md:text-6xl font-display text-beige/30 leading-none block italic"
             stagger={0.03}
             delay={0.5}
@@ -49,10 +49,7 @@ export default function Contact() {
             className="pt-8"
           >
             <p className="text-xl md:text-2xl text-beige/70 font-serif italic mb-2">
-              That means something caught your attention.
-            </p>
-            <p className="text-2xl md:text-3xl text-beige font-bold tracking-tight">
-              Let’s take it further.
+              I’m always open to conversations about ideas, brands, and opportunities where I can learn and contribute.
             </p>
           </motion.div>
         </div>

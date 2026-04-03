@@ -7,60 +7,49 @@ export default function About() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
       <div className="lg:col-span-4">
-        <span className="text-accent font-bold tracking-widest uppercase text-[10px] mb-4 block">01 / About</span>
+        <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">01 / About</span>
         <FallingText
           text="My Journey"
-          className="text-4xl font-serif italic text-primary-text"
+          className="text-4xl font-serif italic text-ink"
           stagger={0.1}
           duration={1}
         />
       </div>
       <div className="lg:col-span-8 space-y-8">
         <FallingText
-          text='"Strategy is the bridge between vision and reality."'
-          className="text-2xl font-serif leading-relaxed text-primary-text/90 font-normal italic"
+          text="I’m someone who’s always been more interested in the “why” behind brands than just the “what.”"
+          className="text-2xl font-serif leading-relaxed text-ink/90 font-normal italic"
           stagger={0.03}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-secondary-text font-light">
-          <FallingText
-            text="My journey began with a curiosity for how digital spaces influence human behavior. Currently pursuing my BBA in Digital Business, I've spent the last two years exploring the intersection of branding and consumer psychology."
-            className="text-sm leading-relaxed text-secondary-text font-light"
-            stagger={0.01}
-            duration={0.6}
-          />
-          <FallingText
-            text="I'm interested in understanding not just what people buy, but why they buy into a story. My strengths lie in my ability to balance rigorous research with creative execution, ensuring that every strategy is as imaginative as it is grounded in data."
-            className="text-sm leading-relaxed text-secondary-text font-light"
-            stagger={0.01}
-            duration={0.6}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-ink/70 font-light">
+          <div className="space-y-4">
+            <p>Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?</p>
+            <p>Through my projects and internships, I’ve explored areas like influencer marketing, brand positioning, and integrated campaigns — but what excites me most is connecting insights to ideas.</p>
+          </div>
+          <div className="space-y-4">
+            <p>I enjoy breaking down brands, observing consumer behavior, and building ideas that feel both logical and creative.</p>
+            <p>Currently, I’m looking for opportunities where I can learn, contribute, and grow while working on meaningful brand and marketing challenges.</p>
+          </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-          {[
-            { title: "Research", desc: "Diving deep into the 'why' before the 'how'." },
-            { title: "Execution", desc: "Turning complex strategies into simple actions." },
-            { title: "Creativity", desc: "Finding unique solutions for standard problems." }
-          ].map((item, i) => (
-            <motion.div 
-              key={i} 
-              whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.1)" }}
-              className="p-8 bg-background rounded-2xl border border-black/5 shadow-sm transition-all duration-300"
-            >
-              <FallingText
-                text={item.title}
-                className="font-serif text-xl mb-3 italic text-accent"
-                stagger={0.05}
-                duration={0.8}
-              />
-              <FallingText
-                text={item.desc}
-                className="text-xs text-secondary-text leading-relaxed font-light"
-                stagger={0.01}
-                duration={0.6}
-              />
-            </motion.div>
-          ))}
+        <div className="pt-12 border-t border-ink/5">
+          <h3 className="text-2xl font-serif italic mb-8 text-ink">How I Think About Brands</h3>
+          <p className="text-lg text-ink/80 font-serif italic mb-6">I notice the small things.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { title: "Premium Perception", desc: "Why some brands feel premium without saying it." },
+              { title: "Relatable Resonance", desc: "Why certain ads feel relatable while others feel forced." },
+              { title: "Cultural Trends", desc: "How culture and trends shape what people buy." }
+            ].map((item, i) => (
+              <div key={i} className="p-8 bg-white rounded-2xl border border-ink/5 shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-serif text-xl mb-3 italic text-ink">{item.title}</h4>
+                <p className="text-xs text-ink/60 leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-ink/70 font-light italic">
+            I believe strong brands are built on understanding people — not just pushing products.
+          </p>
         </div>
       </div>
     </div>
