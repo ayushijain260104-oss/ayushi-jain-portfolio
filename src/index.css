@@ -10,21 +10,28 @@
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   --font-display: "Bebas Neue", sans-serif;
-  --color-beige: #FFFFFF; /* Pure White */
-  --color-olive: #0F172A; /* Slate 900 for accents */
-  --color-ink: #0F172A;   /* Slate 900 for text */
-  --color-paper: #F8FAFC; /* Slate 50 for subtle cards */
+  --color-background: #0F1115;
+  --color-secondary-bg: #151821;
+  --color-accent: #BFA2FF;
+  --color-primary-text: #EAEAF0;
+  --color-secondary-text: #A0A3AA;
+  /* Mapping old names to new colors for compatibility if needed, but I'll update components */
+  --color-beige: #0F1115;
+  --color-paper: #151821;
+  --color-ink: #EAEAF0;
+  --color-olive: #BFA2FF;
 }
 
 @layer base {
   body {
-    @apply font-sans antialiased cursor-none bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-primary-text;
+    background-image: linear-gradient(180deg, #0F1115 0%, #151821 100%);
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-wider text-ink;
+    @apply font-display tracking-wider text-primary-text;
   }
   * {
-    @apply border-border outline-ring/50;
+    @apply border-white/10 outline-accent/50;
   }
   html {
     @apply font-sans;
@@ -32,7 +39,7 @@
 }
 
 .section-divider {
-  @apply h-px bg-ink/10 w-full my-12;
+  @apply h-px bg-white/10 w-full my-12;
 }
 
 .vertical-text {

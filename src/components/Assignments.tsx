@@ -41,50 +41,52 @@ const assignments = [
 
 export default function Assignments() {
   const cards = assignments.map((item, index) => (
-    <div key={index} className="w-full h-full bg-white flex flex-col overflow-hidden group/card">
+    <div key={index} className="w-full h-full bg-secondary-bg flex flex-col overflow-hidden group/card border border-white/5 rounded-3xl shadow-2xl">
       <div className="relative h-[60%] overflow-hidden">
         <img 
           src={item.image} 
           alt={item.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110 grayscale hover:grayscale-0"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-ink/5 group-hover/card:bg-transparent transition-colors duration-500" />
+        <div className="absolute inset-0 bg-background/20 group-hover/card:bg-transparent transition-colors duration-500" />
       </div>
       
       <div className="flex-1 p-8 md:p-12 flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-8 h-[1px] bg-ink/20" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-ink/40">Project 0{index + 1}</span>
+            <span className="w-8 h-[1px] bg-accent/40" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-secondary-text">Project 0{index + 1}</span>
           </div>
-          <h3 className="text-3xl md:text-4xl font-serif italic text-ink mb-4 leading-tight">
+          <h3 className="text-3xl md:text-4xl font-serif italic text-primary-text mb-4 leading-tight">
             {item.title}
           </h3>
-          <p className="text-base text-ink/60 font-light max-w-xl leading-relaxed">
+          <p className="text-base text-secondary-text font-light max-w-xl leading-relaxed">
             {item.overview}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-6 mt-8">
-          <a 
+          <motion.a 
             href={item.link1} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-ink text-beige text-[10px] font-bold uppercase tracking-widest hover:bg-ink/80 transition-all"
+            whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(191,162,255,0.4)" }}
+            className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-accent text-background text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all"
           >
             View Case Study 
             <ArrowUpRight size={14} className="transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-          </a>
-          <a 
+          </motion.a>
+          <motion.a 
             href="https://drive.google.com/drive/u/0/folders/1PSgS8fFRxz-1tT3BLCUGZHGqAcKgCcWy" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group/btn inline-flex items-center gap-3 px-8 py-4 border border-ink/10 text-ink text-[10px] font-bold uppercase tracking-widest hover:bg-ink/5 transition-all"
+            whileHover={{ scale: 1.03, backgroundColor: "rgba(191,162,255,0.1)" }}
+            className="group/btn inline-flex items-center gap-3 px-8 py-4 border border-accent text-accent text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all"
           >
             View More Work
             <ChevronRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
-          </a>
+          </motion.a>
         </div>
       </div>
     </div>
@@ -93,17 +95,17 @@ export default function Assignments() {
   return (
     <section className="py-24">
       <div className="mb-20">
-        <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">03 / Featured Work</span>
+        <span className="text-accent font-bold tracking-widest uppercase text-[10px] mb-4 block">03 / Featured Work</span>
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
           blurStrength={0}
           containerClassName="!m-0"
-          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink mb-6 !font-normal"
+          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-primary-text mb-6 !font-normal"
         >
           STRATEGIC Archive
         </ScrollReveal>
-        <p className="text-lg text-ink/60 font-light max-w-2xl">
+        <p className="text-lg text-secondary-text font-light max-w-2xl">
           A curated selection of high-impact marketing blueprints and analytical frameworks.
         </p>
       </div>
@@ -118,7 +120,7 @@ export default function Assignments() {
         />
         
         <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-12">
-          <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-ink/20">
+          <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white/20">
             <ChevronLeft size={16} />
             <span>Swipe or Click to Cycle</span>
             <ChevronRight size={16} />

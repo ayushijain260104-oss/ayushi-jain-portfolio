@@ -39,13 +39,13 @@ export default function Timeline() {
   return (
     <div>
       <div className="mb-16">
-        <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">01 / Experience</span>
+        <span className="text-accent font-bold tracking-widest uppercase text-[10px] mb-4 block">01 / Experience</span>
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
           blurStrength={0}
           containerClassName="!m-0"
-          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink !font-normal"
+          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-primary-text !font-normal"
         >
           PROFESSIONAL Timeline
         </ScrollReveal>
@@ -53,7 +53,7 @@ export default function Timeline() {
 
       <div className="relative">
         {/* Vertical Timeline Line */}
-        <div className="absolute left-3 md:left-6 top-4 bottom-4 w-px bg-ink/10 hidden sm:block" />
+        <div className="absolute left-3 md:left-6 top-4 bottom-4 w-px bg-white/10 hidden sm:block" />
 
         <div className="space-y-12">
           {experience.map((item, index) => (
@@ -66,37 +66,40 @@ export default function Timeline() {
               className="relative pl-0 sm:pl-16 md:pl-24 group"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-[0.375rem] md:left-[1.125rem] top-4 w-3 h-3 rounded-full border-2 border-ink bg-white z-10 hidden sm:block group-hover:bg-ink transition-colors duration-300" />
+              <div className="absolute left-[0.375rem] md:left-[1.125rem] top-4 w-3 h-3 rounded-full border-2 border-accent bg-background z-10 hidden sm:block group-hover:bg-accent transition-colors duration-300" />
               
-              <div className="p-8 md:p-10 bg-white border border-ink/5 rounded-3xl shadow-sm hover:shadow-xl transition-all">
+              <motion.div 
+                whileHover={{ y: -5, boxShadow: "0 20px 40px -20px rgba(191,162,255,0.15)" }}
+                className="p-8 md:p-10 bg-secondary-bg border border-white/5 rounded-3xl shadow-sm transition-all duration-300"
+              >
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-2">
-                      <h3 className="text-2xl md:text-3xl font-display text-ink uppercase tracking-tight group-hover:text-ink/70 transition-colors">
+                      <h3 className="text-2xl md:text-3xl font-display text-primary-text uppercase tracking-tight group-hover:text-accent transition-colors">
                         {item.role}
                       </h3>
                     </div>
                     <div className="flex flex-wrap items-center gap-3 mb-6">
-                      <span className="text-sm font-bold text-ink">{item.company}</span>
-                      <span className="text-ink/20 hidden sm:block">|</span>
-                      <span className="text-sm italic font-serif text-ink/60">{item.period}</span>
+                      <span className="text-sm font-bold text-primary-text">{item.company}</span>
+                      <span className="text-white/20 hidden sm:block">|</span>
+                      <span className="text-sm italic font-serif text-secondary-text">{item.period}</span>
                     </div>
                     <ul className="space-y-4">
                       {item.points.map((point, i) => (
-                        <li key={i} className="flex gap-4 text-sm text-ink/70 font-light leading-relaxed">
-                          <span className="w-1.5 h-1.5 rounded-full bg-ink/20 mt-1.5 shrink-0" />
+                        <li key={i} className="flex gap-4 text-sm text-secondary-text font-light leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent/40 mt-1.5 shrink-0" />
                           <span>{point}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="hidden lg:block">
-                    <div className="w-12 h-12 rounded-full bg-ink/5 flex items-center justify-center text-ink font-display text-xl group-hover:bg-ink group-hover:text-white transition-all">
+                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-accent font-display text-xl group-hover:bg-accent group-hover:text-background transition-all">
                       0{index + 1}
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

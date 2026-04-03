@@ -34,13 +34,13 @@ export default function Achievements() {
   return (
     <div>
       <div className="mb-16">
-        <span className="text-ink font-bold tracking-widest uppercase text-[10px] mb-4 block">02 / Key Achievements</span>
+        <span className="text-accent font-bold tracking-widest uppercase text-[10px] mb-4 block">02 / Key Achievements</span>
         <ScrollReveal
           baseOpacity={0}
           baseRotation={0}
           blurStrength={0}
           containerClassName="!m-0"
-          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-ink !font-normal"
+          textClassName="text-6xl md:text-8xl font-display leading-none tracking-tighter text-primary-text !font-normal"
         >
           IMPACT & Results
         </ScrollReveal>
@@ -54,9 +54,10 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="p-8 bg-white border border-ink/5 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center group"
+            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.2)" }}
+            className="p-8 bg-background border border-white/5 rounded-2xl shadow-sm transition-all flex flex-col items-center text-center group"
           >
-            <div className="text-4xl md:text-5xl font-display text-ink mb-3 leading-none group-hover:scale-110 transition-transform flex items-baseline">
+            <div className="text-4xl md:text-5xl font-display text-accent mb-3 leading-none group-hover:scale-110 transition-transform flex items-baseline">
               <CountUp
                 to={Number(item.number)}
                 duration={2}
@@ -64,10 +65,10 @@ export default function Achievements() {
               />
               {item.suffix && <span className="text-2xl ml-0.5">{item.suffix}</span>}
             </div>
-            <h3 className="text-[10px] uppercase tracking-widest font-bold text-ink mb-3">
+            <h3 className="text-[10px] uppercase tracking-widest font-bold text-primary-text mb-3">
               {item.label}
             </h3>
-            <p className="text-[11px] text-ink/60 leading-relaxed">
+            <p className="text-[11px] text-secondary-text leading-relaxed">
               {item.description}
             </p>
           </motion.div>
