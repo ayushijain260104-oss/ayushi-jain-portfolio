@@ -53,7 +53,7 @@ export default function Timeline() {
 
       <div className="relative">
         {/* Vertical Timeline Line */}
-        <div className="absolute left-3 md:left-6 top-4 bottom-4 w-px bg-white/10 hidden sm:block" />
+        <div className="absolute left-3 md:left-6 top-4 bottom-4 w-px bg-black/5 hidden sm:block" />
 
         <div className="space-y-12">
           {experience.map((item, index) => (
@@ -70,7 +70,7 @@ export default function Timeline() {
               
               <motion.div 
                 whileHover={{ y: -5, boxShadow: "0 20px 40px -20px rgba(191,162,255,0.15)" }}
-                className="p-8 md:p-10 bg-secondary-bg border border-white/5 rounded-3xl shadow-sm transition-all duration-300"
+                className="p-8 md:p-10 bg-secondary-bg border border-black/5 rounded-3xl shadow-sm transition-all duration-300"
               >
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                   <div className="flex-1">
@@ -81,7 +81,7 @@ export default function Timeline() {
                     </div>
                     <div className="flex flex-wrap items-center gap-3 mb-6">
                       <span className="text-sm font-bold text-primary-text">{item.company}</span>
-                      <span className="text-white/20 hidden sm:block">|</span>
+                      <span className="text-black/10 hidden sm:block">|</span>
                       <span className="text-sm italic font-serif text-secondary-text">{item.period}</span>
                     </div>
                     <ul className="space-y-4">
@@ -94,7 +94,7 @@ export default function Timeline() {
                     </ul>
                   </div>
                   <div className="hidden lg:block">
-                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-accent font-display text-xl group-hover:bg-accent group-hover:text-background transition-all">
+                    <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center text-accent font-display text-xl group-hover:bg-accent group-hover:text-background transition-all">
                       0{index + 1}
                     </div>
                   </div>

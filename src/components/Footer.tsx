@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="py-20 border-t border-white/5 bg-background">
+    <footer className="py-20 border-t border-black/5 bg-background">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 px-6">
         <div className="text-2xl font-serif font-bold text-primary-text">
           AJ<span className="text-accent">.</span>

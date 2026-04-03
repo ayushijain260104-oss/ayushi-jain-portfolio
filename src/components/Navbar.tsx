@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop Sidebar Nav */}
-      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col border-r border-white/10 p-8 z-50 bg-background">
+      <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col border-r border-black/5 p-8 z-50 bg-background">
         <div className="mb-12">
           <a href="#home" className="text-3xl font-serif font-bold tracking-tighter text-primary-text">
             AJ<span className="text-accent">.</span>
@@ -61,14 +61,14 @@ export default function Navbar() {
               }`}
             >
               <div className={`h-px transition-all duration-300 ${
-                activeSection === link.href.slice(1) ? 'w-4 bg-accent' : 'w-0 bg-white/20 group-hover:w-4'
+                activeSection === link.href.slice(1) ? 'w-4 bg-accent' : 'w-0 bg-black/10 group-hover:w-4'
               }`} />
               {link.name}
             </a>
           ))}
         </nav>
 
-        <div className="mt-auto pt-8 border-t border-white/10">
+        <div className="mt-auto pt-8 border-t border-black/5">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-text hover:text-accent transition-colors"
@@ -79,7 +79,7 @@ export default function Navbar() {
       </aside>
 
       {/* Mobile Header */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md z-50 border-b border-white/10 py-4 px-6 flex justify-between items-center">
+      <nav className="lg:hidden fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md z-50 border-b border-black/5 py-4 px-6 flex justify-between items-center">
         <a href="#home" className="text-xl font-serif font-bold text-primary-text">AJ<span className="text-accent">.</span></a>
         <button onClick={() => setIsOpen(!isOpen)} className="text-primary-text">
           {isOpen ? <X size={24} /> : <Menu size={24} />}

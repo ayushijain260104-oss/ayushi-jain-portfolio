@@ -45,7 +45,7 @@ export default function About() {
             <motion.div 
               key={i} 
               whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.1)" }}
-              className="p-8 bg-background rounded-2xl border border-white/5 shadow-sm transition-all duration-300"
+              className="p-8 bg-background rounded-2xl border border-black/5 shadow-sm transition-all duration-300"
             >
               <FallingText
                 text={item.title}

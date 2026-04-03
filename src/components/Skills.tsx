@@ -49,10 +49,10 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
-            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.15)" }}
-            className="p-10 bg-background border border-white/5 rounded-3xl shadow-sm transition-all duration-300"
+            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.1)" }}
+            className="p-10 bg-background border border-black/5 rounded-3xl shadow-sm transition-all duration-300"
           >
-            <h3 className="text-2xl font-serif italic mb-8 text-primary-text/90 border-b border-white/10 pb-6">{group.title}</h3>
+            <h3 className="text-2xl font-serif italic mb-8 text-primary-text/90 border-b border-black/5 pb-6">{group.title}</h3>
             <ul className="space-y-4">
               {group.skills.map(skill => (
                 <li key={skill} className="text-sm text-secondary-text font-light flex items-center gap-3">
@@ -70,10 +70,10 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.15)" }}
-        className="p-10 bg-background border border-white/5 rounded-3xl shadow-sm transition-all duration-300 overflow-hidden"
+        whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.1)" }}
+        className="p-10 bg-background border border-black/5 rounded-3xl shadow-sm transition-all duration-300 overflow-hidden"
       >
-        <h3 className="text-2xl font-serif italic mb-8 text-primary-text/90 border-b border-white/10 pb-6">Tools I Master</h3>
+        <h3 className="text-2xl font-serif italic mb-8 text-primary-text/90 border-b border-black/5 pb-6">Tools I Master</h3>
         <div className="py-4">
           <LogoLoop 
             logos={toolLogos} 

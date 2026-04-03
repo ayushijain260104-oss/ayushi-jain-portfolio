@@ -54,8 +54,8 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.2)" }}
-            className="p-8 bg-background border border-white/5 rounded-2xl shadow-sm transition-all flex flex-col items-center text-center group"
+            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(191,162,255,0.1)" }}
+            className="p-8 bg-background border border-black/5 rounded-2xl shadow-sm transition-all flex flex-col items-center text-center group"
           >
             <div className="text-4xl md:text-5xl font-display text-accent mb-3 leading-none group-hover:scale-110 transition-transform flex items-baseline">
               <CountUp

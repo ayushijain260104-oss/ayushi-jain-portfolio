@@ -30,7 +30,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-accent overflow-hidden mb-4 md:mb-8 shadow-[0_0_30px_rgba(191,162,255,0.2)] relative group shrink-0"
+              className="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-accent overflow-hidden mb-4 md:mb-8 shadow-[0_10px_30px_rgba(191,162,255,0.1)] relative group shrink-0"
             >
               <img 
                 src="https://i.ibb.co/nsQ0YhQR/Untitled-design.png" 
@@ -63,9 +63,9 @@ export default function Hero() {
           <div className="lg:col-span-4 flex flex-col sm:flex-row gap-4 justify-end">
             <motion.a
               href="#assignments"
-              whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(191,162,255,0.4)" }}
+              whileHover={{ scale: 1.03, boxShadow: "0 10px 20px rgba(191,162,255,0.2)" }}
               transition={{ duration: 0.3 }}
-              className="inline-flex items-center justify-center bg-accent text-background px-12 py-6 text-xs uppercase tracking-widest font-bold rounded-lg transition-all group"
+              className="inline-flex items-center justify-center bg-accent text-black px-12 py-6 text-xs uppercase tracking-widest font-bold rounded-lg transition-all group"
             >
               View Work
               <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" size={14} />

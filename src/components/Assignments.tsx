@@ -41,7 +41,7 @@ const assignments = [
 
 export default function Assignments() {
   const cards = assignments.map((item, index) => (
-    <div key={index} className="w-full h-full bg-secondary-bg flex flex-col overflow-hidden group/card border border-white/5 rounded-3xl shadow-2xl">
+    <div key={index} className="w-full h-full bg-secondary-bg flex flex-col overflow-hidden group/card border border-black/5 rounded-3xl shadow-2xl">
       <div className="relative h-[60%] overflow-hidden">
         <img 
           src={item.image} 
@@ -49,7 +49,7 @@ export default function Assignments() {
           className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110 grayscale hover:grayscale-0"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-background/20 group-hover/card:bg-transparent transition-colors duration-500" />
+        <div className="absolute inset-0 bg-background/10 group-hover/card:bg-transparent transition-colors duration-500" />
       </div>
       
       <div className="flex-1 p-8 md:p-12 flex flex-col justify-between">
@@ -71,8 +71,8 @@ export default function Assignments() {
             href={item.link1} 
             target="_blank" 
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(191,162,255,0.4)" }}
-            className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-accent text-background text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all"
+            whileHover={{ scale: 1.03, boxShadow: "0 10px 20px rgba(191,162,255,0.2)" }}
+            className="group/btn inline-flex items-center gap-3 px-8 py-4 bg-accent text-black text-[10px] font-bold uppercase tracking-widest rounded-lg transition-all"
           >
             View Case Study 
             <ArrowUpRight size={14} className="transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
@@ -120,7 +120,7 @@ export default function Assignments() {
         />
         
         <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-12">
-          <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-white/20">
+          <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-black/20">
             <ChevronLeft size={16} />
             <span>Swipe or Click to Cycle</span>
             <ChevronRight size={16} />
