@@ -17,12 +17,17 @@ export default function About() {
         />
       </div>
       <div className="lg:col-span-8 space-y-8">
-        <div className="h-[300px] border border-ink/5 rounded-3xl overflow-hidden bg-paper/50">
+        <div className="h-[200px] border border-ink/5 rounded-3xl overflow-hidden bg-paper/50">
           <PhysicsFallingText
-            text="I’m someone who’s always been more interested in the “why” behind brands than just the “what.” Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?"
-            fontSize="28px"
-            gravity={0.5}
+            text="I look for the “why” behind brands."
+            fontSize="32px"
+            gravity={0.15}
           />
+        </div>
+        <div className="space-y-6">
+          <p className="text-xl font-serif italic text-ink/90 leading-relaxed">
+            I’m someone who’s always been more interested in the “why” behind brands than just the “what.” Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-ink/70 font-light">
           <div className="space-y-4">

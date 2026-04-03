@@ -11,6 +11,7 @@ interface PhysicsFallingTextProps {
   fontSize?: string;
   className?: string;
   textColor?: string;
+  fontFamily?: string;
 }
 
 const PhysicsFallingText = ({
@@ -18,11 +19,12 @@ const PhysicsFallingText = ({
   trigger = 'auto',
   backgroundColor = 'transparent',
   wireframes = false,
-  gravity = 1,
+  gravity = 0.2, // Slower default gravity
   mouseConstraint = true,
   fontSize = '24px',
   className = '',
   textColor = '#0F172A',
+  fontFamily = '"Cormorant Garamond", serif', // Elegant default font
 }: PhysicsFallingTextProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -76,12 +78,12 @@ const PhysicsFallingText = ({
     const ctx = canvasRef.current.getContext('2d');
     if (!ctx) return;
 
-    ctx.font = `${fontSize} "Bebas Neue", sans-serif`;
+    ctx.font = `${fontSize} ${fontFamily}`;
     
     let currentX = 50;
     let currentY = 50;
 
-    words.forEach((word) => {
+    words.forEach((word, index) => {
       const metrics = ctx.measureText(word);
       const wordWidth = metrics.width + 10;
       const wordHeight = parseInt(fontSize) + 10;
@@ -92,8 +94,9 @@ const PhysicsFallingText = ({
       }
 
       const body = Bodies.rectangle(currentX + wordWidth / 2, currentY, wordWidth, wordHeight, {
-        restitution: 0.6,
+        restitution: 0.4,
         friction: 0.1,
+        frictionAir: 0.05, // Slows down the fall significantly
         render: {
           fillStyle: 'transparent',
           strokeStyle: 'transparent',
@@ -101,6 +104,8 @@ const PhysicsFallingText = ({
       });
 
       (body as any).word = word;
+      (body as any).opacity = 0; // Start invisible
+      (body as any).delay = index * 100; // Staggered entrance
       bodies.push(body);
       currentX += wordWidth + 15;
     });
@@ -109,10 +114,10 @@ const PhysicsFallingText = ({
       World.add(engine.world, bodies);
     }
 
-    // Custom rendering for text
+    // Custom rendering for text with fade-in
     Events.on(render, 'afterRender', () => {
       const context = render.context;
-      context.font = `${fontSize} "Bebas Neue", sans-serif`;
+      context.font = `${fontSize} ${fontFamily}`;
       context.textAlign = 'center';
       context.textBaseline = 'middle';
 
@@ -120,10 +125,16 @@ const PhysicsFallingText = ({
         const { x, y } = body.position;
         const angle = body.angle;
         const word = (body as any).word;
+        
+        // Handle fade-in
+        if ((body as any).opacity < 1) {
+          (body as any).opacity += 0.01;
+        }
 
         context.save();
         context.translate(x, y);
         context.rotate(angle);
+        context.globalAlpha = (body as any).opacity;
         context.fillStyle = textColor;
         context.fillText(word, 0, 0);
         context.restore();
