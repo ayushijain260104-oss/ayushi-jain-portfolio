@@ -1,25 +1,27 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { FiInstagram, FiLinkedin, FiMail, FiPlus, FiX } from 'react-icons/fi';
 import FallingText from './ui/FallingText';
 
 export default function Contact() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const socialLinks = [
     { 
       name: 'Instagram', 
-      icon: <FiInstagram size={24} />, 
+      icon: <FiInstagram size={22} />, 
       href: 'https://www.instagram.com/ayushij_6?igsh=MWh2YWFvY3d4b3Y3dw%3D%3D&utm_source=qr',
       label: 'Follow me on Instagram'
     },
     { 
       name: 'LinkedIn', 
-      icon: <FiLinkedin size={24} />, 
+      icon: <FiLinkedin size={22} />, 
       href: 'https://www.linkedin.com/in/ayushi-jain-a80972223?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
       label: 'Connect on LinkedIn'
     },
     { 
       name: 'Email', 
-      icon: <FiMail size={24} />, 
+      icon: <FiMail size={22} />, 
       href: 'mailto:ayushijain178@gmail.com',
       label: 'Send me an email'
     },
@@ -69,29 +71,55 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* Social Icons Row */}
-        <div className="flex justify-center items-center gap-8 md:gap-12">
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              target={link.name !== 'Email' ? "_blank" : undefined}
-              rel={link.name !== 'Email' ? "noopener noreferrer" : undefined}
-              aria-label={link.label}
-              title={link.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4 + (index * 0.1) }}
-              whileHover={{ 
-                scale: 1.2, 
-                color: '#F5F5DC', // beige color
-                transition: { duration: 0.2 }
-              }}
-              className="text-beige/50 transition-colors duration-300 flex items-center justify-center"
-            >
-              {link.icon}
-            </motion.a>
-          ))}
+        {/* Interactive Social Hub (Plus Sign UI) */}
+        <div className="relative flex justify-center items-center h-32">
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`relative z-20 w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 ${
+              isOpen ? 'bg-white text-ink rotate-45' : 'bg-white text-ink hover:scale-110'
+            }`}
+            whileTap={{ scale: 0.9 }}
+            aria-label={isOpen ? "Close social menu" : "Open social menu"}
+            title={isOpen ? "Close" : "Connect"}
+          >
+            {isOpen ? <FiX size={32} /> : <FiPlus size={32} />}
+          </motion.button>
+
+          <AnimatePresence>
+            {isOpen && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                {socialLinks.map((link, index) => {
+                  const angle = (index * (360 / socialLinks.length)) * (Math.PI / 180);
+                  const radius = 110;
+                  const x = Math.cos(angle) * radius;
+                  const y = Math.sin(angle) * radius;
+
+                  return (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
+                      target={link.name !== 'Email' ? "_blank" : undefined}
+                      rel={link.name !== 'Email' ? "noopener noreferrer" : undefined}
+                      aria-label={link.label}
+                      title={link.name}
+                      initial={{ opacity: 0, x: 0, y: 0, scale: 0 }}
+                      animate={{ opacity: 1, x, y, scale: 1 }}
+                      exit={{ opacity: 0, x: 0, y: 0, scale: 0 }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 260, 
+                        damping: 20,
+                        delay: index * 0.1 
+                      }}
+                      className="absolute w-16 h-16 rounded-full flex items-center justify-center bg-white text-ink shadow-md hover:shadow-xl hover:scale-110 transition-all duration-300"
+                    >
+                      {link.icon}
+                    </motion.a>
+                  );
+                })}
+              </div>
+            )}
+          </AnimatePresence>
         </div>
 
         <motion.div 
@@ -112,4 +140,5 @@ export default function Contact() {
     </section>
   );
 }
+
 
