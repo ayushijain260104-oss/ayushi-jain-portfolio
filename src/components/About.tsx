@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import ScrollReveal from './ui/ScrollReveal';
 import FallingText from './ui/FallingText';
+import PhysicsFallingText from './ui/PhysicsFallingText';
 
 export default function About() {
   return (
@@ -16,14 +17,15 @@ export default function About() {
         />
       </div>
       <div className="lg:col-span-8 space-y-8">
-        <FallingText
-          text="I’m someone who’s always been more interested in the “why” behind brands than just the “what.”"
-          className="text-2xl font-serif leading-relaxed text-ink/90 font-normal italic"
-          stagger={0.03}
-        />
+        <div className="h-[300px] border border-ink/5 rounded-3xl overflow-hidden bg-paper/50">
+          <PhysicsFallingText
+            text="I’m someone who’s always been more interested in the “why” behind brands than just the “what.” Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?"
+            fontSize="28px"
+            gravity={0.5}
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm leading-relaxed text-ink/70 font-light">
           <div className="space-y-4">
-            <p>Why do people choose one brand over another? What makes something feel premium, relatable, or trustworthy?</p>
             <p>Through my projects and internships, I’ve explored areas like influencer marketing, brand positioning, and integrated campaigns — but what excites me most is connecting insights to ideas.</p>
           </div>
           <div className="space-y-4">
