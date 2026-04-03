@@ -10,14 +10,14 @@
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   --font-display: "Bebas Neue", sans-serif;
-  --color-background: #0F1115;
-  --color-secondary-bg: #151821;
+  --color-background: #000000;
+  --color-secondary-bg: #0A0C10;
   --color-accent: #BFA2FF;
   --color-primary-text: #EAEAF0;
   --color-secondary-text: #A0A3AA;
-  /* Mapping old names to new colors for compatibility if needed, but I'll update components */
-  --color-beige: #0F1115;
-  --color-paper: #151821;
+  /* Mapping old names to new colors for compatibility */
+  --color-beige: #000000;
+  --color-paper: #0A0C10;
   --color-ink: #EAEAF0;
   --color-olive: #BFA2FF;
 }
@@ -25,7 +25,7 @@
 @layer base {
   body {
     @apply font-sans antialiased bg-background text-primary-text;
-    background-image: linear-gradient(180deg, #0F1115 0%, #151821 100%);
+    background-image: linear-gradient(180deg, #000000 0%, #0A0C10 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-wider text-primary-text;
